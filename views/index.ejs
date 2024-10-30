@@ -1,0 +1,47 @@
+<%- include('./partials/header.ejs') %>
+  <div class="container">
+    <header>
+      <h1>Rock<br>Paper<br>Scissorss</h1>
+      <div class="score">
+        <p class="scoreTitre">
+          Score
+        </p>
+        <p class="scoreNombre">
+          12
+        </p>
+      </div>
+    </header>
+    <main>
+      <div class="pentagone">
+        <div class="signes">
+          <div class="ligne ligne1">
+            <div class="icone scissors"></div>
+          </div>
+          <div class="ligne ligne2">
+            <div class="icone spock"></div>
+            <div class="icone paper"></div>
+          </div>
+          <div class="ligne ligne3">
+            <div class="icone lizards"></div>
+            <div class="icone rock"></div>
+          </div>
+        </div>
+      </div>
+      <div class="imgRules hidden "></div>
+    </main>
+    <footer>
+      <button class="rules"></button>
+    </footer>
+    <div class="duel hidden">
+      <div class="yourChoice">
+        <h2>YOU PICKED</h2>
+        <div class="icone"></div>
+      </div>
+      <div class="houseChoice">
+        <h2>THE HOUSE PICKED</h2>
+        <div class="iconeHouse"></div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="../js/index.js"></script>
+<%- include('./partials/footer') %>
