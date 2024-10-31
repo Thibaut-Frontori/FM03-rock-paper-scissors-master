@@ -1,0 +1,17 @@
+{
+    "scissors"{
+        win:paper,lizard
+    },
+    "paper"{
+        win:rock,spock
+    },
+    "rock"{
+        win:lizard,scissors
+    },
+    "lizard"{
+        win:spock,paper
+    },
+    "spock"{        
+        win:scissors, rock
+    }
+}
