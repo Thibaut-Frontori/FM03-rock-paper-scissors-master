@@ -138,9 +138,7 @@ footer{
     background-color: white;
     color: var(--bodyColor);
 }
-.hidden{
-    display: none;
-}
+
 .imgRules{
     width: 25rem;
     height: 25rem;
@@ -149,4 +147,34 @@ footer{
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 5px;
+}
+.duel{
+    display: flex;
+    width: 40rem;
+    justify-content: space-around;
+}
+.iconDuel{
+    background-color: white;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+}
+.opacity{
+    opacity: 0.2;
+}
+.duelTitre{
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.hidden{
+    display: none;
 }

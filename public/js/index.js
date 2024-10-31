@@ -1,4 +1,6 @@
 import { afficherRules } from "./function.js";
+import { afficherDuel } from "./function.js";
+import { signeHouse } from "./function.js";
 
 //Afficher la règle du jeux
 afficherRules();
@@ -12,24 +14,10 @@ const selectIcone =function() {
             console.log(iconeName); 
         //intérer la fonction pour afficher le duel
         afficherDuel(iconeName);
+        signeHouse();
             
         });
     });  
 };
 selectIcone();
 
-const afficherDuel=function(iconeName){
-    const pentagoneElement=document.querySelector(".pentagone");
-    const duelElement=document.querySelector(".duel");
-    const iconeElement=document.querySelector(".icone");
-    console.log(iconeElement);
-    
-
-    //Je masque mon pentagone et j'affiche mon duel
-    pentagoneElement.classList.toggle("hidden");
-    duelElement.classList.toggle("hidden");
-
-    // j'ajoute la classe de mon iconeSélectionn'
-    // iconeElement.classList.add(iconeName);
-
-};
