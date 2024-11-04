@@ -1,3 +1,4 @@
+import relationSignes from "../data/signes.json" assert  { type: 'json' };
 //Eléments du DOM
 const rules=document.querySelector(".rules");
 const imgRules=document.querySelector(".imgRules");
@@ -8,14 +9,15 @@ const iconeHouseElement=document.querySelector(".iconeHouse");
 const quiGagne=document.querySelector(".quiGagne");
 const rejouer=document.querySelector(".rejouer")
 
-// bdd
-const tbDesSignes=[
-    "scissors",
-    "paper",
-    "rock",
-    "lizards",
-    "spock",
-];
+const relationSignes = {
+    "scissors": { win: ["paper", "lizards"] },
+    "paper": { win: ["rock", "spock"] },
+    "rock": { win: ["lizards", "scissors"] },
+    "lizards": { win: ["spock", "paper"] },
+    "spock": { win: ["scissors", "rock"] },
+};
+const tbDesSignes=Object.keys(relationSignes);
+
 
 export const afficherRules = function(){
     rules.textContent="RULES";
@@ -31,6 +33,21 @@ export const afficherRules = function(){
 });
 }
 
+export const selectIcone =function() {
+    const iconeElement=document.querySelectorAll(".icone");
+    iconeElement.forEach(icone => {
+        icone.addEventListener("click", (event)=>{
+        // On récupère le bon icone
+            const iconeName=Array.from(icone.classList).find(nomIcone=>nomIcone !=="icone");
+            console.log(iconeName); 
+        //intérer la fonction pour afficher le duel
+        afficherDuel(iconeName);
+        signeHouse();
+            
+        });
+    });  
+};
+
 export const afficherDuel=function(iconeName){
 
     console.log(iconeElement);
@@ -45,6 +62,8 @@ export const afficherDuel=function(iconeName){
 
 export const signeHouse=function () {
     const chiffreAleatoire=Math.floor(Math.random()*tbDesSignes.length);
+    console.log(chiffreAleatoire);
+    
     const signeAleatoire=tbDesSignes[chiffreAleatoire];
 
     let count = 3;
