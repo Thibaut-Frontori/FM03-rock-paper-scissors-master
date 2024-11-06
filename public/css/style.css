@@ -7,6 +7,7 @@ body{
     --lizards:#8A57E2;
     --rock:#DC3D5B;
     --paper:#5572F2;
+    --green:#2ecc71;
     background-color: var(--bodyColor);
     min-height:100vh;
     position: relative;
@@ -87,7 +88,7 @@ font-size: 2rem;
     width: 7.2rem;
     height: 7.2rem;
     border: none;
-    background-color: #2ecc71;
+    background-color: var(--green);
 }
 .ligne1{
     justify-content: center;
@@ -166,6 +167,7 @@ footer{
     justify-content: center;
     align-items: center;
     font-weight: 900;
+    transition: width 1s, height 1s , background-color 1s;
 }
 .opacity{
     opacity: 0.2;
@@ -173,10 +175,6 @@ footer{
 .duelTitre{
     color: white;
     margin-bottom: 1rem;
-}
-
-.hidden{
-    display: none;
 }
 .yourChoice, .resultatDuel, .houseChoice{
     width: 33.33%;
@@ -188,4 +186,30 @@ footer{
 .quiGagne{
     color:white;
     font-size: 1.2rem;
+}
+.iconDuel.victoire {
+    width: 12rem;
+    height: 12rem;
+    background-color:var(--green);
+}
+.lesScores{
+    display: flex;
+}
+.vainqueurActuel{
+    border: 5px solid var(--green);
+}
+.rejouer{
+    margin-top: 1rem;
+    background: white;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 5px;
+}
+.rejouer:hover{
+    background: var(--bodyColor);
+    color: white;
+    border: 1px solid white;
+}
+.hidden{
+    display: none;
 }

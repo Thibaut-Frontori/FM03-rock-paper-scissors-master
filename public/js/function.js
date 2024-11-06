@@ -12,11 +12,15 @@ const quiGagneElement = document.querySelector(".quiGagne");
 const scoreElement =document.querySelector(".scoreNombre");
 const resultatDuelElement = document.querySelector(".resultatDuel");
 const rejouerElement = document.querySelector(".rejouer");
-
+const scoreVousElement = document.querySelector(".scoreVous");
+const scoreOrdiElement = document.querySelector(".scoreOrdi");
+const cardScoreVousElement = document.querySelector(".cardScoreVous");
+const cardScoreOrdiElement = document.querySelector(".cardScoreOrdi");
 const iconeElements = document.querySelectorAll(".icone");
 
 //Variables
-let score=0;
+let scoreVous=0;
+let scoreOrdi=0;
 const tbDesSignes = Object.keys(relationSignes);
 
 // fonction de simplification
@@ -128,12 +132,25 @@ const quiGagne = function (iconeName, signeAleatoire) {
         quiGagneElement.textContent = "Égalité !";
     } else if (signeTrouve) {
         quiGagneElement.textContent = "Victoire !";
-        score++;
-        scoreElement.textContent = score;
+        iconeElement.classList.add("victoire");
+        scoreVous++;
+        scoreVousElement.textContent = scoreVous;
     } else {
         quiGagneElement.textContent = "Défaite !";
-        score--;
-        scoreElement.textContent = score;
+        iconeHouseElement.classList.add("victoire");
+        scoreOrdi++;
+        scoreOrdiElement.textContent = scoreOrdi;
+    }
+
+    if (scoreVous>scoreOrdi) {
+        cardScoreVousElement.classList.add("vainqueurActuel");
+        cardScoreOrdiElement.classList.remove("vainqueurActuel");
+    }else if (scoreVous<scoreOrdi) {
+        cardScoreOrdiElement.classList.add("vainqueurActuel");
+        cardScoreVousElement.classList.remove("vainqueurActuel");
+    }else{
+        cardScoreVousElement.classList.remove("vainqueurActuel");
+        cardScoreOrdiElement.classList.remove("vainqueurActuel");
     }
 };
 export const rejouer=function(){
